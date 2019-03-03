@@ -1,0 +1,45 @@
+# To get started, copy this file to `config.yml` and then use one of
+# the configurations below to point it at your build server.
+#
+# IMPORTANT: only one server is supported
+#
+# The `projects` and `ignored_projects` options are optional. By default, Stoplight
+# will use all projects returned from the given url. If you want to blacklist,
+# use `ignored_projects`. If you want to whitelist, use `projects`.
+server:
+  # Example Jenkis configuration
+  # See https://wiki.jenkins.io/display/JENKINS/Monitoring+Jenkins
+  # url: https://ci.jenkins-ci.org/cc.xml
+  # username: username
+  # password: password
+  # projects:
+  #   - mail    # build named "mail"
+  #   - ^test   # all builds starting with "test"
+  # ignored_projects:
+  #   - not_me  # ignore the project named "not_me"
+
+  # Example Travis CI configuration (for public repos on travis-ci.org)
+  # See https://docs.travis-ci.com/user/cc-menu
+  # url: https://api.travis-ci.org/repos/<owner>/<repository>/cc.xml?&branch=<branch>
+  # projects:
+  #   - mail    # build named "mail"
+  #   - ^test   # all builds starting with "test"
+  # ignored_projects:
+  #   - not_me  # ignore the project named "not_me"
+
+  # Example Travis CI configuration (for private repos on travis-ci.com)
+  # See https://docs.travis-ci.com/user/cc-menu
+  # url: https://api.travis-ci.com/repos/<owner>/<repository>/cc.xml?token=<token>&branch=<branch>
+  # projects:
+  #   - mail    # build named "mail"
+  #   - ^test   # all builds starting with "test"
+  # ignored_projects:
+  #   - not_me  # ignore the project named "not_me"
+
+  # Example Thoughtworks GoCD Configuration
+  # See https://docs.gocd.org/current/integration/#monitoring-your-builds-with-client-tools
+  # url: http://<username>:<password>@<your_go_server>:8153/go/cctray.xml
+  # username: username
+  # password: password
+  # projects:
+  #   - .*::.*::.* #To show only jobs and not stages
