@@ -1,0 +1,5 @@
+<Projects>
+	<Project activity="Sleeping" lastBuildLabel="1" lastBuildStatus="Success" lastBuildTime="2018-02-14T03:19:53Z" name="project1" webUrl="http://ci.jenkins-ci.org/job/project1/"/>
+	<Project activity="Building" lastBuildLabel="2" lastBuildStatus="Failure" lastBuildTime="2018-02-14T03:19:53Z" name="project2" webUrl="http://ci.jenkins-ci.org/job/project2/"/>
+	<Project activity="Sleeping" lastBuildLabel="3" lastBuildStatus="Unknown" lastBuildTime="2018-02-14T03:19:53Z" name="project3" webUrl="http://ci.jenkins-ci.org/job/project3/"/>
+</Projects>
