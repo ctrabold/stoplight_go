@@ -3,7 +3,7 @@ package main
 import (
 	"encoding/xml"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 	"net/url"
@@ -167,7 +167,7 @@ func FetchProjects(c echo.Context) error {
 		log.Fatal("Failed on client", err)
 	}
 
-	ccxml, err := ioutil.ReadAll(res.Body)
+	ccxml, err := io.ReadAll(res.Body)
 	res.Body.Close()
 	if err != nil {
 		log.Fatal("Failed on parsing Body", err)
