@@ -274,7 +274,7 @@ func FilterIncludeProjects(record Project) bool {
 
 	for _, regexp := range regexps {
 		if regexp.MatchString(record.Name) {
-			fmt.Printf("allowing element %s because it matches allow pattern\n", record.Name)
+			// log.Printf("allowing element %s because it matches allow pattern\n", record.Name)
 			return true
 		}
 	}
@@ -292,7 +292,7 @@ func FilterExcludedProjects(record Project) bool {
 
 	for _, regexp := range regexps {
 		if regexp.MatchString(record.Name) {
-			fmt.Printf("deleting element %s due to ignore pattern\n", record.Name)
+			// log.Printf("deleting element %s due to ignore pattern\n", record.Name)
 			return false
 		}
 	}
