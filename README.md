@@ -1,6 +1,6 @@
 # Overview
 
-[![Build Status](https://travis-ci.com/ctrabold/stoplight_go.svg?token=Bq7v8yEtjzfGtBmQs6m5&branch=master)](https://travis-ci.com/ctrabold/stoplight_go)
+![Build Status](https://github.com/ctrabold/stoplight_go/actions/workflows/ci.yml/badge.svg?branch=main)
 
 Stoplight_GO is a build monitoring tool that is largely based off [stoplight](https://github.com/customink/stoplight), and is written in [Go](https://golang.org) to make deployments easier.
 
@@ -44,13 +44,13 @@ go run testserver/main.go
 You can use ENV variables to override the bind address and port:
 
 ```bash
-STOPLIGHT_HOST=127.0.0.1 STOPLIGHT_PORT=3000 ./stoplight_go_*
+STOPLIGHT_HOST=127.0.0.1 STOPLIGHT_PORT=3000 ./stoplight
 ```
 
 Default:
 
 ```bash
-STOPLIGHT_HOST=0.0.0.0 STOPLIGHT_PORT=1323 ./stoplight_go_*
+STOPLIGHT_HOST=0.0.0.0 STOPLIGHT_PORT=1323 ./stoplight
 ```
 
 - Open a browser
@@ -69,26 +69,25 @@ go build stoplight.go
 
 For SSL support read <https://echo.labstack.com/cookbook/auto-tls>
 
-## Cross Compiling
+## Cross Compiling WIP
+
+This is untested territory.
+
+See [docs](https://www.digitalocean.com/community/tutorials/how-to-build-go-executables-for-multiple-platforms-on-ubuntu-16-04)
 
 Execute this command:
 
 ```bash
-go get github.com/mitchellh/gox
-gox -os="linux darwin" -arch="amd64" -ldflags "-X main.Rev=`git rev-parse --short HEAD`" -verbose
+env GOOS=target-OS GOARCH=target-architecture go build .
 ```
 
-TravisCI will automatically push new releases to <https://github.com/ctrabold/stoplight_go/releases>
+Github will automatically push new releases to <https://github.com/ctrabold/stoplight_go/releases>
 
 ## Known Issues & Todos
 
 - Only one CI server is supported for now
 - JavaScript and CSS assets are pre-compiled
 - Tests are incomplete
-
-## Ideas
-
-- [ ] Implement linter <https://github.com/golangci/golangci-lint>
 
 ## Contributing
 
