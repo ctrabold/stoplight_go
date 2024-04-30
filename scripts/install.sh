@@ -2,7 +2,5 @@
 
 set -eu
 
-go get github.com/GeertJohan/go.rice
-go get github.com/GeertJohan/go.rice/rice
-go get github.com/mitchellh/gox
-go get -t -v ./...
+go install github.com/GeertJohan/go.rice/rice@latest
+go install -v .
