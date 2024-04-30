@@ -1,0 +1,30 @@
+name: Build and release project
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version-file: "go.mod"
+      - name: Install dependencies
+        run: bash ./scripts/install.sh
+      - name: Test
+        run: bash ./scripts/test.sh
+      - name: Build
+        run: bash ./scripts/build.sh
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          draft: false
+          files: bin/stoplight
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
