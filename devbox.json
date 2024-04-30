@@ -1,0 +1,27 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.10.5/.schema/devbox.schema.json",
+  "packages": [
+    "go@1.22.0",
+    "golangci-lint@latest"
+  ],
+  "env": {
+    "PATH": "$PATH:$PWD/bin"
+  },
+  "shell": {
+    "init_hook": [
+    ],
+    "scripts": {
+      "test": [
+        "bash scripts/test.sh"
+      ],
+      "install": [
+        "bash scripts/install.sh"
+      ],
+      "release": [
+        "bash scripts/install.sh",
+        "bash scripts/test.sh",
+        "bash scripts/build.sh"
+      ]
+    }
+  }
+}
