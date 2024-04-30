@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"log"
 	"strings"
 	"testing"
 
@@ -31,7 +32,10 @@ func mockConfig() {
 	viper.SetConfigType("yaml")
 	viper.SetEnvKeyReplacer(strings.NewReplacer(".", "_"))
 	viper.AutomaticEnv()
-	viper.ReadConfig(bytes.NewBuffer(yamlExample))
+
+	if err := viper.ReadConfig(bytes.NewBuffer(yamlExample)); err != nil {
+		log.Fatalf("Error reading config, %s", err)
+	}
 }
 
 func TestXMLParser(t *testing.T) {
