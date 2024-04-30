@@ -156,6 +156,10 @@ func FetchProjects(c echo.Context) error {
 	}
 
 	req, err := http.NewRequest("GET", uri.String(), nil)
+	if err != nil {
+		log.Fatal("Failed to create GET request", err)
+	}
+
 	if viper.IsSet("server.username") && viper.IsSet("server.password") {
 		username := viper.GetString("server.username")
 		password := viper.GetString("server.password")
