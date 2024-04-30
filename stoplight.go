@@ -115,7 +115,7 @@ func main() {
 	port := viper.GetInt("Port")
 	address := fmt.Sprintf("%s:%v", host, port)
 
-	fmt.Printf("Got server address %v\n", address)
+	fmt.Printf("Got server address http://%v\n", address)
 
 	s := &http.Server{
 		Addr: address,
